@@ -137,27 +137,23 @@ it('display Table component Text', () => {
   expect(wrapper.find('row').find('cell')).toHaveLength(0)
 });
 
-describe("fetch input values", () => {
-  let total1, total2;
-  it("Should capture content correctly onChange", () => {
-    const wrapper = shallow(<RomanCalculator />);
-    const content = wrapper.find("input").at(0);
-    content.value = "MCD";
-    content.simulate("change", { target: {value: 'MCD'}});
-    const array = content.value.toUpperCase().split("");
-    total1 = getNumericalValue(array);
-  });
-  
-  it("Should capture second content correctly onChange", () => {
-    const wrapper = shallow(<RomanCalculator />);
-    const content = wrapper.find("input").at(1);
-    content.value = "III";
-    content.simulate("change", { target: {value: 'III'}});
-    const array = content.value.toUpperCase().split("");
-    total2 = getNumericalValue(array);
-  });
-})
+it("Should capture content correctly onChange", () => {
+  const wrapper = shallow(<RomanCalculator />);
+  const content = wrapper.find("input").at(0);
+  content.value = "MCD";
+  content.simulate("change", { target: {value: 'MCD'}});
+  const array = content.value.toUpperCase().split("");
+  let total1 = getNumericalValue(array);
+});
 
+it("Should capture second content correctly onChange", () => {
+  const wrapper = shallow(<RomanCalculator />);
+  const content = wrapper.find("input").at(1);
+  content.value = "III";
+  content.simulate("change", { target: {value: 'III'}});
+  const array = content.value.toUpperCase().split("");
+  let total2 = getNumericalValue(array);
+});
 it('should return 5 if input is 3 and 2', () => {
   expect(addNumbers(3, 2)).toBeUndefined();
 })

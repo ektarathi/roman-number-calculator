@@ -26,7 +26,7 @@ const RomanCalculator: React.SFC<RomanCalculatorProps> = () => {
         ];
         
 		let roman = "";
-		var parser = function (item: any, index: any, a: any) {
+		let parser = function (item: any, index: any, a: any) {
 			switch (item) {
 				case "0":
 				case "1":
@@ -66,7 +66,7 @@ const RomanCalculator: React.SFC<RomanCalculatorProps> = () => {
 		if (output === 0) {
 			setError(true);
 		}
-		var narray = String(output).split("").reverse();
+		let narray = String(output).split("").reverse();
 		console.log(narray);
 		let parseValue = getRomanNumber(narray);
 		setTotal(parseValue);
@@ -83,7 +83,7 @@ const RomanCalculator: React.SFC<RomanCalculatorProps> = () => {
 		if (output === 0) {
 			setError(true);
 		}
-		var narray = String(output).split("").reverse();
+		let narray = String(output).split("").reverse();
 		let parseValue = getRomanNumber(narray);
 		setTotal(parseValue);
 	};
@@ -94,7 +94,7 @@ const RomanCalculator: React.SFC<RomanCalculatorProps> = () => {
 		if (output === 0) {
 			setError(true);
 		}
-		var narray = String(output).split("").reverse();
+		let narray = String(output).split("").reverse();
 		let parseValue = getRomanNumber(narray);
 		setTotal(parseValue);
 	};
